@@ -1,0 +1,55 @@
+
+
+“Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” is a 2020 Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks paper by Patrick Lewis and colleagues that introduced the now-standard “RAG” framework. It shows how to combine neural retrieval over a large corpus with sequence-to-sequence generation to tackle tasks where factual knowledge and up-to-date information are crucial.
+
+Key facts
+Authors: Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, et al.
+
+Published at: NeurIPS 2020 (with earlier arXiv preprint).
+
+Core idea: Combine parametric seq2seq model with non-parametric memory (Wikipedia index).
+
+Retriever: Dense Passage Retrieval (DPR) over Wikipedia.
+
+Impact: Established “RAG” as a standard approach for grounded, knowledge-intensive NLP.
+
+Background and motivation
+The paper starts from the observation that large pre-trained language models (LMs) implicitly store factual knowledge in their parameters, but are hard to update and often struggle on knowledge-intensive tasks like open-domain QA, fact verification, and entity-centric reasoning. They also provide poor provenance: it’s unclear where a fact came from. RAG is proposed to fix these issues by letting a generator query an explicit external knowledge source at inference time.
+
+Model architecture
+RAG combines:
+
+Parametric memory: a pre-trained seq2seq model (like BART) that handles language understanding and generation.
+
+Non-parametric memory: a dense vector index of Wikipedia passages, built using Dense Passage Retrieval (DPR).
+
+Given a query, DPR retrieves top-k relevant passages. RAG then marginalizes over these passages while generating an answer, effectively treating each passage as a latent variable. The paper proposes two variants:
+
+RAG-Sequence: conditions on the same retrieved set for the whole sequence.
+
+RAG-Token: allows different tokens to attend to different passages, giving more flexibility.
+
+Training and tasks
+The authors present a general fine-tuning recipe: jointly train the retriever and generator (initializing both from strong pre-trained models) on downstream supervision. They evaluate on multiple knowledge-intensive benchmarks, including open-domain QA datasets like Natural Questions, TriviaQA, and WebQuestions, and broader tasks such as slot filling and dialog-style QA.
+
+Across tasks, RAG models set new state of the art at the time, outperforming:
+
+Purely parametric seq2seq models (no retrieval).
+
+Traditional retrieve-and-extract pipelines that generate answers by span extraction rather than free-form generation.
+
+Notable findings
+Factuality and specificity: RAG generations are more specific, diverse, and factually accurate compared with a strong parametric-only baseline, thanks to access to explicit passages.
+
+Provenance: Because outputs are conditioned on retrieved documents, systems can surface those documents as evidence, improving transparency.
+
+Updateability: Updating knowledge no longer requires retraining the generator; updating or swapping the document index is enough, which is crucial for dynamic domains.
+
+Impact and legacy
+This paper effectively coined “retrieval-augmented generation” and catalyzed a large line of work on RAG-style systems. Later research has extended it with better retrievers, multi-hop reasoning, evidentiality modeling, and complex LM–retriever pipelines, but Lewis et al. (2020) remains the canonical reference for the original RAG framework used in many modern knowledge-grounded LLM applications.
+
+
+
+
+
+    
