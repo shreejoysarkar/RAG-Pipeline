@@ -9,3 +9,6 @@ faiss-cpu
 chromadb
 beautifulsoup4
 arxiv
+langchain-text-splitters
+python-dotenv
+langchain-openai
