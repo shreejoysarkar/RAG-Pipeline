@@ -12,3 +12,5 @@ arxiv
 langchain-text-splitters
 python-dotenv
 langchain-openai
+sentence_transformers
+langchain_huggingface
