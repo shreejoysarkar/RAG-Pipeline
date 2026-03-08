@@ -1127,6 +1127,20 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-chroma"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "chromadb" },
+    { name = "langchain-core" },
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fa/0e/54896830b7331c90788cf96b2c37858977c199da9ecdaf85cf11eb6e6bc1/langchain_chroma-1.1.0.tar.gz", hash = "sha256:8069685e7848041e998d16c8a4964256b031fd20551bf59429173415bc2adc12", size = 220382, upload-time = "2025-12-12T16:23:01.399Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ae/35/2a6d1191acaad043647e28313b0ecd161d61f09d8be37d1996a90d752c13/langchain_chroma-1.1.0-py3-none-any.whl", hash = "sha256:ff65e4a2ccefb0fb9fde2ff38705022ace402f979d557f018f6e623f7288f0fc", size = 12981, upload-time = "2025-12-12T16:23:00.196Z" },
+]
+
+[[package]]
 name = "langchain-classic"
 version = "1.0.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1184,6 +1198,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/2e/a7/4c992456dae89a8704afec03e3c2a0149ccc5f29c1cbdd5f4aa77628e921/langchain_core-1.2.16.tar.gz", hash = "sha256:055a4bfe7d62f4ac45ed49fd759ee2e6bdd15abf998fbeea695fda5da2de6413", size = 835286, upload-time = "2026-02-25T16:27:30.551Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2d/a1/57d5feaa11dc2ebb40f3bc3d7bf4294b6703e152e56edea9d4c622475a6a/langchain_core-1.2.16-py3-none-any.whl", hash = "sha256:2768add9aa97232a7712580f678e0ba045ee1036c71fe471355be0434fcb6e30", size = 502219, upload-time = "2026-02-25T16:27:29.379Z" },
+]
+
+[[package]]
+name = "langchain-huggingface"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "langchain-core" },
+    { name = "tokenizers" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/42/5b/4910551367de5c6ec246616fcc0ddb0bc6f9e5d353d4a22dcb5ab1f87e60/langchain_huggingface-1.2.1.tar.gz", hash = "sha256:33d52a30a56775380c6b4321b78136a410eb079132a80fe7120ddd4b954b4efa", size = 253106, upload-time = "2026-03-02T18:44:39.163Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bc/90/a1440bfa467a6dd9025ad80f3c239554de28aec49dacfb369fda92871556/langchain_huggingface-1.2.1-py3-none-any.whl", hash = "sha256:0930c216a457d2c8dc7b39a756c39c567f1d88593bfee2c3441f3ae718435f0f", size = 30924, upload-time = "2026-03-02T18:44:37.745Z" },
 ]
 
 [[package]]
@@ -2509,8 +2537,10 @@ dependencies = [
     { name = "faiss-cpu" },
     { name = "ipykernel" },
     { name = "langchain" },
+    { name = "langchain-chroma" },
     { name = "langchain-community" },
     { name = "langchain-core" },
+    { name = "langchain-huggingface" },
     { name = "langchain-openai" },
     { name = "langchain-text-splitters" },
     { name = "pymupdf" },
@@ -2527,8 +2557,10 @@ requires-dist = [
     { name = "faiss-cpu", specifier = ">=1.13.2" },
     { name = "ipykernel", specifier = ">=7.2.0" },
     { name = "langchain", specifier = ">=1.2.10" },
+    { name = "langchain-chroma", specifier = ">=1.1.0" },
     { name = "langchain-community", specifier = ">=0.4.1" },
     { name = "langchain-core", specifier = ">=1.2.16" },
+    { name = "langchain-huggingface", specifier = ">=1.2.1" },
     { name = "langchain-openai", specifier = ">=1.1.10" },
     { name = "langchain-text-splitters", specifier = ">=1.1.1" },
     { name = "pymupdf", specifier = ">=1.27.1" },

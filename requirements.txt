@@ -6,11 +6,11 @@ pypdf
 pymupdf
 sentence-transformers
 faiss-cpu
-chromadb
+langchain_chroma
 beautifulsoup4
 arxiv
 langchain-text-splitters
 python-dotenv
 langchain-openai
 sentence_transformers
-langchain_huggingface
+langchain_huggingface 
